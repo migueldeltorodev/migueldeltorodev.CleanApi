@@ -13,7 +13,5 @@ namespace Customers.Api.Repositories
         Task<bool> UpdateAsync(Customer customer);
 
         Task<bool> DeleteAsync(Guid id);
-
-        Task<bool> ExistsAsync(Guid id);
     }
 }

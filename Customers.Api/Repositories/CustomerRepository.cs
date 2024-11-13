@@ -6,15 +6,8 @@ using Dapper;
 
 namespace Customers.Api.Repositories
 {
-    public class CustomerRepository : ICustomerRepository
+    public class CustomerRepository(IDbConnectionFactory _connectionFactory) : ICustomerRepository
     {
-        private readonly IDbConnectionFactory _connectionFactory;
-
-        public CustomerRepository(IDbConnectionFactory connectionFactory)
-        {
-            _connectionFactory = connectionFactory;
-        }
-
         public async Task<bool> CreateAsync(Customer customer)
         {
             using var connection = await _connectionFactory.CreateConnectionAsync();
@@ -72,14 +65,6 @@ namespace Customers.Api.Repositories
                 new { Id = id.ToString() });
 
             return result > 0;
-        }
-
-        public async Task<bool> ExistsAsync(Guid id)
-        {
-            using var connection = await _connectionFactory.CreateConnectionAsync();
-            return await connection.ExecuteScalarAsync<bool>(
-                "SELECT COUNT(1) FROM Customers WHERE Id = @Id",
-                new { Id = id.ToString() });
         }
     }
 }
