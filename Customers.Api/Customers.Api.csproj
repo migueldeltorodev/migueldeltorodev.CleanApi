@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="FastEndpoints" Version="5.31.0" />
+    <PackageReference Include="FastEndpoints.Swagger" Version="5.31.0" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.0" />
+    <PackageReference Include="ValueOf" Version="2.0.31" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Contracts\Data\" />
+    <Folder Include="Contracts\Responses\" />
+    <Folder Include="Contracts\Requests\" />
+    <Folder Include="Database\" />
+    <Folder Include="Domain\Common\" />
+    <Folder Include="Endpoints\" />
+    <Folder Include="Mapping\" />
+    <Folder Include="Validation\" />
+    <Folder Include="Summaries\" />
+    <Folder Include="Services\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+</Project>
