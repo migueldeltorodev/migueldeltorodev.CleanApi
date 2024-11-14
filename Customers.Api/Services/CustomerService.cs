@@ -9,14 +9,14 @@ namespace Customers.Api.Services
         public async Task<bool> CreateAsync(Customer customer)
         {
             // User Exists?
-            var existingCustomer = await _customerRepository.GetAsync(customer.Id);
+            var existingCustomer = await _customerRepository.GetAsync(customer.Id.Value);
             if (existingCustomer is not null)
             {
                 throw new ValidationException($"A customer with id {customer.Id} already exists");
             }
             // Email in Use?
             var customers = await _customerRepository.GetAllAsync();
-            if (customers.Any(x => x.Email.Equals(customer.Email, StringComparison.OrdinalIgnoreCase)))
+            if (customers.Any(x => x.Email.Equals(customer.Email.Value)))
             {
                 throw new ValidationException($"A customer with email {customer.Email} already exists");
             }
@@ -37,7 +37,7 @@ namespace Customers.Api.Services
         public async Task<bool> UpdateAsync(Customer customer)
         {
             // Verificar si existe
-            var existingCustomer = await _customerRepository.GetAsync(customer.Id);
+            var existingCustomer = await _customerRepository.GetAsync(customer.Id.Value);
             if (existingCustomer is null)
             {
                 return false;
