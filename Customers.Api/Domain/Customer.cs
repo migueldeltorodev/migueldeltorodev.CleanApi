@@ -4,7 +4,9 @@ namespace Customers.Api.Domain
 {
     public class Customer
     {
+        // Propiedades con init para inmutabilidad después de la creación
         public CustomerId Id { get; init; } = CustomerId.From(Guid.NewGuid());
+
         public Username Username { get; init; } = default!;
         public FullName FullName { get; init; } = default!;
         public EmailAddress Email { get; init; } = default!;
