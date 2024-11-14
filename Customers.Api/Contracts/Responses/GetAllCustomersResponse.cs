@@ -1,5 +1,7 @@
 ﻿namespace Customers.Api.Contracts.Responses
 {
-    public record GetAllCustomersResponse(
-        IEnumerable<CustomerResponse> Customers);
+    public class GetAllCustomersResponse
+    {
+        public IEnumerable<CustomerResponse> Customers { get; init; } = Enumerable.Empty<CustomerResponse>();
+    }
 }

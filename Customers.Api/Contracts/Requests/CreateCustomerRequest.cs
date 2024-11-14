@@ -1,8 +1,10 @@
 ﻿namespace Customers.Api.Contracts.Requests
 {
-    public record CreateCustomerRequest(
-        string Username,
-        string FullName,
-        string Email,
-        DateTime DateOfBirth);
+    public class CreateCustomerRequest
+    {
+        public string Username { get; init; } = default!;
+        public string FullName { get; init; } = default!;
+        public string Email { get; init; } = default!;
+        public DateTime DateOfBirth { get; init; }
+    }
 }
