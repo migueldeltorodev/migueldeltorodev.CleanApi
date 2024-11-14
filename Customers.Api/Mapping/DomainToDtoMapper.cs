@@ -1,5 +1,6 @@
 ﻿using Customers.Api.Contracts.Data;
 using Customers.Api.Domain;
+using Customers.Api.Domain.Common;
 
 namespace Customers.Api.Mapping
 {
@@ -7,12 +8,14 @@ namespace Customers.Api.Mapping
     {
         public static CustomerDto ToCustomerDto(this Customer customer)
         {
-            return new CustomerDto(
-                customer.Id,
-                customer.Username,
-                customer.FullName,
-                customer.Email,
-                customer.DateOfBirth.ToDateTime(TimeOnly.MinValue));
+            return new CustomerDto
+            {
+                Id = customer.Id.Value.ToString(),
+                Email = customer.Email.Value,
+                Username = customer.Username.Value,
+                FullName = customer.FullName.Value,
+                DateOfBirth = customer.DateOfBirth.Value.ToDateTime(TimeOnly.MinValue)
+            };
         }
     }
 }

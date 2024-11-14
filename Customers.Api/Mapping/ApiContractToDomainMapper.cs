@@ -10,10 +10,11 @@ namespace Customers.Api.Mapping
         {
             return new Customer
             {
-                Username = request.Username,
-                FullName = request.FullName,
-                Email = request.Email,
-                DateOfBirth = DateOnly.FromDateTime(request.DateOfBirth)
+                Id = CustomerId.From(Guid.NewGuid()),
+                Email = EmailAddress.From(request.Email),
+                Username = Username.From(request.Username),
+                FullName = FullName.From(request.FullName),
+                DateOfBirth = DateOfBirth.From(DateOnly.FromDateTime(request.DateOfBirth))
             };
         }
 
@@ -21,11 +22,11 @@ namespace Customers.Api.Mapping
         {
             return new Customer
             {
-                Id = request.Id,
-                Username = request.Username,
-                FullName = request.FullName,
-                Email = request.Email,
-                DateOfBirth = DateOnly.FromDateTime(request.DateOfBirth)
+                Id = CustomerId.From(request.Id),
+                Email = EmailAddress.From(request.Email),
+                Username = Username.From(request.Username),
+                FullName = FullName.From(request.FullName),
+                DateOfBirth = DateOfBirth.From(DateOnly.FromDateTime(request.DateOfBirth))
             };
         }
     }

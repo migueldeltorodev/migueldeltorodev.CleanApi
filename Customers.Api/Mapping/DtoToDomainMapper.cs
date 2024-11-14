@@ -10,11 +10,11 @@ namespace Customers.Api.Mapping
         {
             return new Customer
             {
-                Id = customerDto.Id,
-                Username = customerDto.Username,
-                FullName = customerDto.FullName,
-                Email = customerDto.Email,
-                DateOfBirth = DateOnly.FromDateTime(customerDto.DateOfBirth)
+                Id = CustomerId.From(Guid.Parse(customerDto.Id)),
+                Email = EmailAddress.From(customerDto.Email),
+                Username = Username.From(customerDto.Username),
+                FullName = FullName.From(customerDto.FullName),
+                DateOfBirth = DateOfBirth.From(DateOnly.FromDateTime(customerDto.DateOfBirth))
             };
         }
     }
