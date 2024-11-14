@@ -1,25 +1,25 @@
 # Customers API
 
 Este proyecto es una API para gestionar clientes tomando de https://github.com/Elfocrash/clean-minimal-api, 
-implementada en C# utilizando ASP.NET Core. La API permite crear, leer, actualizar y eliminar (CRUD) información sobre clientes, utilizando patrones de diseño como Value Objects y Dapper para la interacción con la base de datos.
+implementada en C# utilizando ASP.NET Core. La API permite crear, leer, actualizar y eliminar (CRUD) informaciÃ³n sobre clientes, utilizando patrones de diseÃ±o como Value Objects y Dapper para la interacciÃ³n con la base de datos.
 
 ## Tabla de Contenidos
 
-- [Caracteristicas](#caracteristicas)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [CaracterÃ­sticas](#caracterÃ­sticas)
+- [TecnologÃ­as Utilizadas](#tecnologÃ­as-utilizadas)
 - [Estructura del Proyecto](#estructura-del-proyecto)
-- [Instalacion](#instalacion)
+- [InstalaciÃ³n](#instalacion)
 - [Uso](#uso)
 
-## Caracteristicas
+## CaracterÃ­sticas
 
-- Gestión de clientes con propiedades como nombre, correo electrónico, nombre completo, nombre de usuario y fecha de nacimiento.
-- Validación de datos utilizando FluentValidation.
-- Uso de Value Objects para encapsular lógica de validación y mantener la inmutabilidad.
-- Interacción con la base de datos utilizando Dapper.
-- Documentación de la API con FastEndpoints y Swagger.
+- GestiÃ³n de clientes con propiedades como nombre, correo electrÃ³nico, nombre completo, nombre de usuario y fecha de nacimiento.
+- ValidaciÃ³n de datos utilizando FluentValidation.
+- Uso de Value Objects para encapsular lÃ³gica de validaciÃ³n y mantener la inmutabilidad.
+- InteracciÃ³n con la base de datos utilizando Dapper.
+- DocumentaciÃ³n de la API con FastEndpoints y Swagger.
 
-## Tecnologias Utilizadas
+## TecnologÃ­as Utilizadas
 
 - C#
 - ASP.NET Core
@@ -32,47 +32,47 @@ implementada en C# utilizando ASP.NET Core. La API permite crear, leer, actualiz
 ## Estructura del Proyecto
 
 Customers.Api
-¦
+Â¦
 +-- Contracts
-¦ +-- Data
-¦ +-- Requests
-¦ +-- Responses
-¦
+Â¦ +-- Data
+Â¦ +-- Requests
+Â¦ +-- Responses
+Â¦
 +-- Database
-¦ +-- DatabaseInitializer.cs
-¦ +-- IDbConnectionFactory.cs
-¦
+Â¦ +-- DatabaseInitializer.cs
+Â¦ +-- IDbConnectionFactory.cs
+Â¦
 +-- Domain
-¦ +-- Common
-¦ +-- Customer.cs
-¦
+Â¦ +-- Common
+Â¦ +-- Customer.cs
+Â¦
 +-- Endpoints
-¦ +-- CreateCustomerEndpoint.cs
-¦ +-- UpdateCustomerEndpoint.cs
-¦ +-- GetCustomerEndpoint.cs
-¦ +-- GetAllCustomersEndpoint.cs
-¦ +-- DeleteCustomerEndpoint.cs
-¦
+Â¦ +-- CreateCustomerEndpoint.cs
+Â¦ +-- UpdateCustomerEndpoint.cs
+Â¦ +-- GetCustomerEndpoint.cs
+Â¦ +-- GetAllCustomersEndpoint.cs
+Â¦ +-- DeleteCustomerEndpoint.cs
+Â¦
 +-- Mapping
-¦ +-- DomainToDtoMapper.cs
-¦ +-- DtoToDomainMapper.cs
-¦ +-- ApiContractToDomainMapper.cs
-¦
+Â¦ +-- DomainToDtoMapper.cs
+Â¦ +-- DtoToDomainMapper.cs
+Â¦ +-- ApiContractToDomainMapper.cs
+Â¦
 +-- Repositories
-¦ +-- ICustomerRepository.cs
-¦ +-- CustomerRepository.cs
-¦
+Â¦ +-- ICustomerRepository.cs
+Â¦ +-- CustomerRepository.cs
+Â¦
 +-- Services
-¦ +-- ICustomerService.cs
-¦ +-- CustomerService.cs
-¦
+Â¦ +-- ICustomerService.cs
+Â¦ +-- CustomerService.cs
+Â¦
 +-- Validation
-¦ +-- CreateCustomerRequestValidator.cs
-¦ +-- UpdateCustomerRequestValidator.cs
-¦
+Â¦ +-- CreateCustomerRequestValidator.cs
+Â¦ +-- UpdateCustomerRequestValidator.cs
+Â¦
 +-- Program.cs
 
-## Instalacion
+## InstalaciÃ³n
 
 1. Clona el repositorio:
    ```bash
@@ -85,14 +85,14 @@ Customers.Api
    dotnet restore
    ```
 
-3. Configura la cadena de conexión en `appsettings.json` si es necesario.
+3. Configura la cadena de conexiÃ³n en `appsettings.json` si es necesario.
 
-4. Ejecuta la aplicación:
+4. Ejecuta la aplicaciÃ³n:
    ```bash
    dotnet run
    ```
 
 ## Uso
 
-La API está disponible en `https://localhost:5001/swagger/index.html`. Puedes utilizar herramientas como Insomnia o Postman para interactuar con los endpoints.
+La API estÃ¡ disponible en `https://localhost:5001/swagger/index.html`. Puedes utilizar herramientas como Insomnia o Postman para interactuar con los endpoints.
 
